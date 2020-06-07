@@ -34,10 +34,6 @@ const Menu = styled.ul`
 `
 
 const Logo = styled.li`
-    a {
-        font-size: 20px;
-        font-weight: 700;
-    }
 
     @media (min-width: 576px) {
         flex: 1;
@@ -109,6 +105,7 @@ const Button = styled(Item)`
     }
 `
 const Toggle = styled.li`
+    display: flex;
     order: 1;
     cursor: pointer;
     animation: ${fade} .25s linear;
@@ -124,14 +121,14 @@ const Toggle = styled.li`
 `
 
 const Bonito = styled.span`
-    background-color: #999;
+    background-color: ${({ theme }) => theme.colors.primary.dark };
     display: inline-block;
     height: 2px;
     position: relative;
     width: 18px;
 
     ::before {
-        background-color: #999;
+        background-color: ${({ theme }) => theme.colors.primary.dark };
         content: "";
         display: inline-block;
         height: 2px;
@@ -141,7 +138,7 @@ const Bonito = styled.span`
     }
 
     ::after {
-        background-color: #999;
+        background-color: ${({ theme }) => theme.colors.primary.dark };
         content: "";
         display: inline-block;
         height: 2px;
@@ -152,6 +149,7 @@ const Bonito = styled.span`
 `
 
 const Image = styled.img`
+
     height: 50px;
 `
 const Navbar = () => {
