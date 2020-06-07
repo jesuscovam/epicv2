@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, { keyframes} from 'styled-components'
 import Button from './Button'
+
+const fade = keyframes`
+    from {
+        opacity: 0;
+    },
+    to {
+        opacity: 1;
+    }
+`
 
 const HeroMain = styled.main`
     display: flex;
     flex-direction: column;
+    animation: ${fade} 0.25s linear;
     margin: 10px 5px;
 `
 
