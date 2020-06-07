@@ -41,7 +41,7 @@ const TextHeader = styled.h1`
 
 const HeroImage = styled.img`
     margin: 40px 30px;
-    height: 280px;
+    height: 260px;
 `
 
 const Hero = () => {
