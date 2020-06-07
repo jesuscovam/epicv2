@@ -34,7 +34,7 @@ const TextSection = styled.section`
 
 const TextHeader = styled.h1`
     font-family: ${({ theme }) => theme.typo.header };
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.primary.main };
 `
