@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
 
 const fade = keyframes`
@@ -34,7 +35,7 @@ const Menu = styled.ul`
 `
 
 const Logo = styled.li`
-
+    cursor: pointer;
     @media (min-width: 576px) {
         flex: 1;
     }
@@ -162,9 +163,11 @@ const Navbar = () => {
         <header>
             <nav>
                 <Menu>
-                    <Logo>
-                        <Image src="/logo.png" alt="logo" />
-                    </Logo>
+                    <Link href="/">
+                        <Logo>
+                            <Image src="/logo.png" alt="logo" />
+                        </Logo>
+                    </Link>
                     <Item active={showNav}>
                         <a href="#">Take Quiz</a>
                     </Item> 

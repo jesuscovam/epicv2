@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes} from 'styled-components'
+import Link from 'next/link'
+import styled, { keyframes } from 'styled-components'
 import Button from './Button'
 
 const fade = keyframes`
@@ -11,7 +12,7 @@ const fade = keyframes`
     }
 `
 
-const HeroMain = styled.main`
+export const Main = styled.main`
     display: flex;
     flex-direction: column;
     animation: ${fade} 0.25s linear;
@@ -42,7 +43,7 @@ const TextSection = styled.section`
     display: flex;
 `
 
-const TextHeader = styled.h1`
+export const TextHeader = styled.h1`
     font-family: ${({ theme }) => theme.typo.header };
     font-size: 1.5em;
     font-weight: 700;
@@ -56,7 +57,7 @@ const HeroImage = styled.img`
 
 const Hero = () => {
     return (
-        <HeroMain>
+        <Main>
             <HeroInfoSection>
                 <TextSection>
                     <TextHeader>epic your experience!</TextHeader>
@@ -64,10 +65,12 @@ const Hero = () => {
                 <HeroImage alt="main image for hero" src="/heroImage.png"/>
             </HeroInfoSection>
             <HeroActionSection>
-                <Button primary>Take the Quiz</Button>
+                <Link href="/quiz/[question]" as="/quiz/1">
+                    <Button primary>Take the Quiz</Button>
+                </Link>
                 <Button>Destinies</Button>
             </HeroActionSection>
-        </HeroMain>
+        </Main>
     );
 }
 
