@@ -20,7 +20,7 @@ const SquareSection = styled.section`
 
 const Square = styled.div`
     cursor: pointer;
-    margin: 20px;
+    margin: 16px;
     width: 120px;
     height: 120px;
     border: 1px solid ${({ theme }) => theme.colors.primary.dark};
