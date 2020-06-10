@@ -36,8 +36,8 @@ const InnerText = styled.h2`
 `
 
 export default function( ){
-    const router = useRouter()
-    const { question } = router.query
+    // const router = useRouter()
+    // const { question } = router.query
     return(
         <QuestionMain>
             <TextHeader>Where are you going?</TextHeader>
