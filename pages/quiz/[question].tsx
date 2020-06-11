@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { useContext, useEffect, useState } from 'react'
 import { AnswersContext } from '../../context/AnswersProvider'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { Main, TextHeader } from '@components/Hero'
 
 
@@ -68,22 +67,24 @@ export default function({ question }){
 const SquareItem = ({ text, number }) => {
     const nextLink = increment(number)
     const { dispatch } = useContext(AnswersContext)
+
+    // go to next question
     function changePage(text: string) {
         dispatch({type: 'ADD_ANSWER', payload: text})
     }
     return(
         <Link href="/quiz/[question]" as={`/quiz/${nextLink}`}>
-        <Square onClick={() => changePage(text)}>
-            <InnerText>
-                { text }
-            </InnerText>
-        </Square>
+            <Square onClick={() => changePage(text)}>
+                <InnerText>
+                    { text }
+                </InnerText>
+            </Square>
         </Link>
 
     )
 }
 
-function increment(numberString) {
+function increment(numberString: string) {
     const result = parseInt(numberString) + 1
     const  resultString = result.toString()
     return resultString
