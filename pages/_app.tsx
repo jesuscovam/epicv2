@@ -1,5 +1,6 @@
 import App from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import AnswersProvider from '../context/AnswersProvider'
 import '../global.css'
 import Navbar from '../src/Navbar'
 
@@ -33,8 +34,10 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Component {...pageProps} />
+        <AnswersProvider>
+          <Navbar />
+          <Component {...pageProps} />
+        </AnswersProvider>
       </ThemeProvider>
     )
   }
