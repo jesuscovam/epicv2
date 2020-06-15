@@ -150,7 +150,6 @@ const Bonito = styled.span`
 `
 
 const Image = styled.img`
-
     height: 50px;
 `
 const Navbar = () => {
