@@ -67,16 +67,19 @@ const FooterImage = styled.img`
 
 export default function({ question }){
     const [ questionPage, setQuestion ] = useState(null)
-    const { state } = useContext(AnswersContext)
+    const { state, dispatch } = useContext(AnswersContext)
     const isDesktop = useMediaQuery({
         query: '(min-width: 768px)'
     })
 
     useEffect(() => {
-        const some = 
-            state.questions.filter(questionState => questionState.number === question)
-        setQuestion(some[0])
-    }, [ question ]) 
+        try {
+            dispatch({type: 'GET_QUESTIONS', payload: question})
+            setQuestion(state.currentPage)
+        } catch (error) {
+            console.error('error getting questions', error)
+        } 
+    }, [ question, state.currentPage ]) 
 
     if (!questionPage) return <p>loading...</p>
     return(

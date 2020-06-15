@@ -17,6 +17,7 @@ const initialState = {
 
     ],
     answers: [],
+    currentPage: ''
 }
 
 const initialReducer = (state, option) => {
@@ -28,8 +29,12 @@ const initialReducer = (state, option) => {
                 ...state,
                 answers: [...state.answers, answer]
             }
-        case 'GET_ANSWERS':
-            return state.answers
+        case 'GET_QUESTIONS':
+            const response = state.questions.filter(answer => answer.number === option.payload)
+            return {
+                ...state,
+                currentPage: response[0]
+            }
 
         default: throw new Error()
     }
