@@ -35,6 +35,11 @@ const initialReducer = (state, option) => {
                 ...state,
                 currentPage: response[0]
             }
+        case 'CLEAN_ANSWERS':
+            return {
+                ...state,
+                answers: []
+            }
 
         default: throw new Error()
     }
