@@ -14,6 +14,12 @@ const QuestionMain = styled(Main)`
     }
 `
 
+const Title = styled(TextHeader)`
+    @media (min-width: 768px){
+        text-align: center;
+    }
+`
+
 const SquareSection = styled.section`
     display: flex;
     flex-wrap: wrap;
@@ -42,10 +48,15 @@ const InnerText = styled.h2`
 `
 
 const FooterImage = styled.img`
-    width: 200px;
+    width: 300px;
     position: absolute;
     right: 0%;
     bottom: 0%;
+    display: none;
+
+    @media (min-width: 768px){
+        display: inline;
+    }
 `
 
 export default function({ question }){
@@ -61,7 +72,7 @@ export default function({ question }){
     if (!questionPage) return <p>loading...</p>
     return(
         <QuestionMain>
-            <TextHeader>{ questionPage.question}</TextHeader>
+            <Title>{ questionPage.question}</Title>
             <SquareSection>
                 { questionPage.answers.map(answer =>
                     <SquareItem 
