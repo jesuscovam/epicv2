@@ -1,14 +1,24 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { useContext, useEffect, useState } from 'react'
 import { AnswersContext } from '../../context/AnswersProvider'
 import Link from 'next/link'
 import { Main, TextHeader } from '@components/Hero'
+import { useMediaQuery } from 'react-responsive'
 
+const fade = keyframes`
+    from {
+        opacity: 0;
+    },
+    to {
+        opacity: 1;
+    }
+`
 
 const QuestionMain = styled(Main)`
     text-align: center;
     padding: 0;
     margin-bottom: 0;
+    animation: ${fade} 0.25s linear;
     @media(min-width: 768px) {
         text-align: left;
     }
@@ -52,16 +62,15 @@ const FooterImage = styled.img`
     position: absolute;
     right: 0%;
     bottom: 0%;
-    display: none;
-
-    @media (min-width: 768px){
-        display: inline;
-    }
+    animation: ${fade} 0.25s linear;
 `
 
 export default function({ question }){
     const [ questionPage, setQuestion ] = useState(null)
     const { state } = useContext(AnswersContext)
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 768px)'
+    })
 
     useEffect(() => {
         const some = 
@@ -81,7 +90,9 @@ export default function({ question }){
                         text={answer.answer} />
                 )}
             </SquareSection>
-            <FooterImage alt="footer image" src="/footerImage.png"/>
+            { isDesktop && 
+                <FooterImage alt="footer image" src="/footerImage.png"/>
+            }
         </QuestionMain>
     )
 }
