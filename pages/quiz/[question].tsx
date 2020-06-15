@@ -7,7 +7,8 @@ import { Main, TextHeader } from '@components/Hero'
 
 const QuestionMain = styled(Main)`
     text-align: center;
-
+    padding: 0;
+    margin-bottom: 0;
     @media(min-width: 768px) {
         text-align: left;
     }
@@ -18,6 +19,7 @@ const SquareSection = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px;
+    margin-bottom: 20px;
 
 `
 
@@ -35,7 +37,15 @@ const Square = styled.button`
 `
 
 const InnerText = styled.h2`
-    font-size: 1.2em
+    font-size: 1.2em;
+    padding: 5px;
+`
+
+const FooterImage = styled.img`
+    width: 200px;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
 `
 
 export default function({ question }){
@@ -60,6 +70,7 @@ export default function({ question }){
                         text={answer.answer} />
                 )}
             </SquareSection>
+            <FooterImage alt="footer image" src="/footerImage.png"/>
         </QuestionMain>
     )
 }
