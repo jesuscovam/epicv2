@@ -1,0 +1,9 @@
+type Destiny @model {
+  id: ID!
+  name: String!
+  description: String
+  image: String!
+  map: String!
+  reservation: Boolean
+  price: Float
+}

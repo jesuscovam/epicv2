@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-epic-dev-192425-authRole",
+            "UnauthRoleArn": "arn:aws:iam::219118966849:role/amplify-epic-dev-192425-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::219118966849:role/amplify-epic-dev-192425-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-epic-dev-192425-deployment",
+            "UnauthRoleName": "amplify-epic-dev-192425-unauthRole",
+            "StackName": "amplify-epic-dev-192425",
+            "StackId": "arn:aws:cloudformation:us-east-1:219118966849:stack/amplify-epic-dev-192425/db56a8c0-d5e8-11ea-8052-0ed24b955b13",
+            "AmplifyAppId": "dog1stoao60oz"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dog1stoao60oz",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

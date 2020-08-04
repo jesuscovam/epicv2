@@ -14,6 +14,14 @@ const initialState = {
             {id: 3, answer: 'EDM & House'},
             {id: 4, answer: 'Salsa & Bachata'},
         ]},
+        {
+            number: '3',
+            question: 'Which place would you like to visit?', answers: [
+                {id: 1, answer: 'The Ruines'},
+                {id: 2, answer: 'The Parks'},
+                {id: 3, answer: 'The Beach'}
+            ]
+        }
 
     ],
     answers: [],
@@ -50,14 +58,14 @@ export const AnswersContext = createContext(null)
 const AnswersProvider = ({ children }) => {
     const [ state, dispatch ] = useReducer(initialReducer, initialState)
 
-    function addAnswer(answer: string) {
+    function addAnswer(answer) {
         dispatch({
             type: 'ADD_ANSWER',
             payload: answer
         })
     }
 
-    function getQuestion(question: string){
+    function getQuestion(question){
         return dispatch({
             type: 'GET_QUESTION',
             payload: question

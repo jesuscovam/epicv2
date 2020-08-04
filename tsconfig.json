@@ -28,6 +28,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "pages/_document.js"
+    "**/*.tsx", "pages/_document.js", "src/Hero.js", "src/Navbar.js", "src/Button.js", "context/AnswersProvider.js", "pages/quiz/[question].js", "pages/_app.js"
   ]
 }

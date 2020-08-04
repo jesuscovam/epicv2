@@ -7,6 +7,7 @@ export default function Home() {
   useEffect(() => {
     dispatch({type: 'CLEAN_ANSWERS'})
   }, [])
+  
   return (
     <>
       <Hero/>

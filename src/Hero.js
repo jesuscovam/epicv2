@@ -41,6 +41,7 @@ const HeroActionSection = styled.section`
 
 const TextSection = styled.section`
     display: flex;
+    flex-direction: column;
 `
 
 export const TextHeader = styled.h1`
@@ -48,6 +49,10 @@ export const TextHeader = styled.h1`
     font-size: 1.5em;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.primary.main };
+`
+
+const SubtitleHeader = styled.p`
+    margin-top: 100px;
 `
 
 const HeroImage = styled.img`
@@ -61,6 +66,7 @@ const Hero = () => {
             <HeroInfoSection>
                 <TextSection>
                     <TextHeader>epic your experience!</TextHeader>
+                    {/* <SubtitleHeader>tex tex text</SubtitleHeader> */}
                 </TextSection>
                 <HeroImage alt="main image for hero" src="/heroImage.png"/>
             </HeroInfoSection>

@@ -105,11 +105,18 @@ const SquareItem = ({ text, number }) => {
     const { dispatch } = useContext(AnswersContext)
 
     // go to next question
-    function changePage(text: string) {
+    function changePage(text) {
         dispatch({type: 'ADD_ANSWER', payload: text})
     }
-    return(
-        <Link href="/quiz/[question]" as={`/quiz/${nextLink}`}>
+    return number !== "3" ?
+            <Link href="/quiz/[question]" as={`/quiz/${nextLink}`}>
+                <Square onClick={() => changePage(text)}>
+                    <InnerText>
+                        { text }
+                    </InnerText>
+                </Square>
+            </Link>
+        : <Link href="/Destinies" >
             <Square onClick={() => changePage(text)}>
                 <InnerText>
                     { text }
@@ -117,10 +124,10 @@ const SquareItem = ({ text, number }) => {
             </Square>
         </Link>
 
-    )
+
 }
 
-function increment(numberString: string) {
+function increment(numberString) {
     const result = parseInt(numberString) + 1
     const  resultString = result.toString()
     return resultString
@@ -143,6 +150,7 @@ export async function getStaticPaths() {
             [
                 { params: { question: '1' } },
                 { params: { question: '2' } },
+                { params: { question: '3' } },
             ],
             fallback: false
         }
